@@ -94,13 +94,13 @@
         //设置文件路径
         mtlLoader.setPath('./mx/');
         //加载mtl文件
-        mtlLoader.load('cbg.mtl', function (material) {
+        mtlLoader.load('cbg1.mtl', function (material) {
             //创建OBJ加载器
             var objLoader = new THREE.OBJLoader();
             //设置当前加载的纹理
             objLoader.setMaterials(material);
             objLoader.setPath('./mx/');
-            objLoader.load('cbg.obj', function (object) {
+            objLoader.load('cbg1.obj', function (object) {
                 //添加阴影
                 object.traverse(function (item) {
                     if(item instanceof THREE.Mesh){
