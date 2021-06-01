@@ -85,7 +85,7 @@
     const planeSize = 200;
 
     const loader = new THREE.TextureLoader();
-    const texture = loader.load('../mx/lg.png');
+    const texture = loader.load('./mx/lg.png');
     texture.wrapS = THREE.RepeatWrapping;
     texture.wrapT = THREE.RepeatWrapping;
     texture.magFilter = THREE.NearestFilter;
@@ -99,7 +99,7 @@
     });
     const mesh = new THREE.Mesh(planeGeo, planeMat);
     mesh.rotation.x = Math.PI * -.5;
-    mesh.position.y = -.45;
+    mesh.position.y = -.46;
     scene.add(mesh);
   }
 
