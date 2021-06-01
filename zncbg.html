@@ -82,14 +82,14 @@
 
         //底部平面
                {
-    const planeSize = 400;
+    const planeSize = 200;
 
     const loader = new THREE.TextureLoader();
     const texture = loader.load('./mx/lg.png');
     texture.wrapS = THREE.RepeatWrapping;
     texture.wrapT = THREE.RepeatWrapping;
     texture.magFilter = THREE.NearestFilter;
-    const repeats = planeSize / 200;
+    const repeats = planeSize / 100;
     texture.repeat.set(repeats, repeats);
 
     const planeGeo = new THREE.PlaneGeometry(planeSize, planeSize);
