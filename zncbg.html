@@ -81,13 +81,28 @@
     function initModel() {
 
         //底部平面
-        var planeGeometry = new THREE.PlaneGeometry(100, 100);
-        var planeMaterial = new THREE.MeshLambertMaterial({color: 0xaaaaaa, side: THREE.DoubleSide});
-        var plane = new THREE.Mesh(planeGeometry, planeMaterial);
-        plane.rotation.x = -0.5 * Math.PI;
-        plane.position.y = -.1;
-        plane.receiveShadow = true; //可以接收阴影
-        scene.add(plane);
+               {
+    const planeSize = 400;
+
+    const loader = new THREE.TextureLoader();
+    const texture = loader.load('./mx/lg.png');
+    texture.wrapS = THREE.RepeatWrapping;
+    texture.wrapT = THREE.RepeatWrapping;
+    texture.magFilter = THREE.NearestFilter;
+    const repeats = planeSize / 200;
+    texture.repeat.set(repeats, repeats);
+
+    const planeGeo = new THREE.PlaneGeometry(planeSize, planeSize);
+    const planeMat = new THREE.MeshPhongMaterial({
+      color:"#ffffff",
+      map: texture,
+      side: THREE.DoubleSide,
+    });
+    const mesh = new THREE.Mesh(planeGeo, planeMat);
+    mesh.rotation.x = Math.PI * -.5;
+    mesh.position.y = -.1;
+    scene.add(mesh);
+  }
 
         //创建gltf加载器
         var loader = new THREE.GLTFLoader();
