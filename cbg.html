@@ -162,6 +162,8 @@
         stats.update();
 
         requestAnimationFrame(animate);
+        scene.rotation.y += 0.001;
+        renderer.render(scene, directionalLight, camera);
     }
 
     function draw() {
